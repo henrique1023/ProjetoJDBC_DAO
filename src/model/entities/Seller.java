@@ -3,14 +3,16 @@ package model.entities;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller extends Department{
+public class Seller extends Department {
 
 	private static final long serialVersionUID = 1L;
 	
+	private Integer id;
+	private String name;
 	private String email;
 	private Date birthDate;
 	private Double basaSalary;
-	
+
 	public Seller(Integer id, String name, String email, Date birthDate, Double basaSalary) {
 		super(id, name);
 		this.email = email;
@@ -67,6 +69,5 @@ public class Seller extends Department{
 		return Objects.equals(basaSalary, other.basaSalary) && Objects.equals(birthDate, other.birthDate)
 				&& Objects.equals(email, other.email);
 	}
-	
-	
+
 }
