@@ -3,7 +3,7 @@ package model.entities;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller extends Department {
+public class Seller {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -12,12 +12,19 @@ public class Seller extends Department {
 	private String email;
 	private Date birthDate;
 	private Double basaSalary;
+	
+	private Department department;
+	
+	public Seller() {
+	}
 
-	public Seller(Integer id, String name, String email, Date birthDate, Double basaSalary) {
-		super(id, name);
+	public Seller(Integer id, String name, String email, Date birthDate, Double basaSalary, Department department) {
+		this.id = id;
+		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
 		this.basaSalary = basaSalary;
+		this.department = department;
 	}
 
 	public String getEmail() {
@@ -44,30 +51,52 @@ public class Seller extends Department {
 		this.basaSalary = basaSalary;
 	}
 
-	@Override
-	public String toString() {
-		return "Seller [email=" + email + ", birthDate=" + birthDate + ", basaSalary=" + basaSalary + "]";
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + Objects.hash(basaSalary, birthDate, email);
-		return result;
+		return Objects.hash(id);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (!super.equals(obj))
+		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		return Objects.equals(basaSalary, other.basaSalary) && Objects.equals(birthDate, other.birthDate)
-				&& Objects.equals(email, other.email);
+		return Objects.equals(id, other.id);
 	}
+
+	@Override
+	public String toString() {
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", basaSalary="
+				+ basaSalary + ", department=" + department + "]";
+	}
+	
 
 }
