@@ -74,11 +74,7 @@ public class SellerDaoJDBC implements SellerDao {
 			st.setInt(5, obj.getDepartment().getId());
 			st.setInt(6, obj.getId());
 
-			int rowAffected = st.executeUpdate();
-
-			if (rowAffected == 0) {
-				throw new DbException("unexpected error! No rows affected!");
-			}
+			st.executeUpdate();
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
@@ -97,11 +93,8 @@ public class SellerDaoJDBC implements SellerDao {
 					"WHERE Id = ?");
 			st.setInt(1, id);
 
-			int rowAffected = st.executeUpdate();
+			st.executeUpdate();
 
-			if (rowAffected == 0) {
-				throw new DbException("unexpected error! Deleted is falled!");
-			}
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
