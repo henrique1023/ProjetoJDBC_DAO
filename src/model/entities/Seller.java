@@ -6,15 +6,15 @@ import java.util.Objects;
 public class Seller {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
 	private Double basaSalary;
-	
+
 	private Department department;
-	
+
 	public Seller() {
 	}
 
@@ -97,6 +97,5 @@ public class Seller {
 		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", basaSalary="
 				+ basaSalary + ", department=" + department + "]";
 	}
-	
 
 }
