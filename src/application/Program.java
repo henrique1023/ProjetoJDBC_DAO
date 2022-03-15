@@ -32,17 +32,19 @@ public class Program {
 			System.out.println(l);
 		}
 		
-		System.out.println("==========test seller #4 Uptade =============");
-		try {
-			Seller test = new Seller(null, "Henrique", "teste@gmail.com", sdf.parse("23/10/2000"), 2100.00, dep);
-			sellerDao.insert(test);
-			
-			dep.setId(2);
-			Seller test1 = new Seller(3, "Lucas", "teste@gmail.com",new Date(), 3210.00, dep);
-			sellerDao.update(test1);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+//		System.out.println("==========test seller #4 Uptade =============");
+//		try {
+//			Seller test = new Seller(null, "Henrique", "teste@gmail.com", sdf.parse("23/10/2000"), 2100.00, dep);
+//			sellerDao.insert(test);
+//			
+//			dep.setId(2);
+//			Seller test1 = new Seller(3, "Lucas", "teste@gmail.com",new Date(), 3210.00, dep);
+//			sellerDao.update(test1);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+		
+		sellerDao.deleteById(8);
 		
 	}
 
