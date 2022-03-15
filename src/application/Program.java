@@ -2,6 +2,7 @@ package application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -33,8 +34,12 @@ public class Program {
 		
 		System.out.println("==========test seller #4 Uptade =============");
 		try {
-			Seller test = new Seller(null, "Henrique", "ehnriqeu@gmail.com", sdf.parse("23/10/2000"), 2100.00, dep);
+			Seller test = new Seller(null, "Henrique", "teste@gmail.com", sdf.parse("23/10/2000"), 2100.00, dep);
 			sellerDao.insert(test);
+			
+			dep.setId(2);
+			Seller test1 = new Seller(3, "Lucas", "teste@gmail.com",new Date(), 3210.00, dep);
+			sellerDao.update(test1);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
